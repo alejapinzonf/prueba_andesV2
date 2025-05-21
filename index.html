@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AndesRobot Team</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+</head>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Galería de fotos (slider-wrapper)
+    let slideIndex = 0;
+    const slider = document.querySelector('.slider-wrapper');
+    const totalSlides = document.querySelectorAll('.slider-wrapper img').length;
+
+    function rotarSlides() {
+      slideIndex = (slideIndex + 1) % totalSlides;
+      slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+    }
+
+    setInterval(rotarSlides, 4000);
+
+    // Hero slider (fondo)
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) slide.classList.add('active');
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    showSlide(currentSlide);
+    setInterval(nextSlide, 5000);
+  });
+</script>
+
+<body>
+  <header>
+    <h1>AndesRobot Team</h1>
+    <nav>
+      <a href="#fotos">Photos</a>
+      <a href="#videos">Videos</a>
+      <a href="#repos">Repositories and Publications</a>
+      <a href="#miembros">Team Members</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+
+    </nav>
+  </header>
+  <section class="hero-slider">
+    <div class="slide" style="background-image: url('img/robot3.png');">
+      <div class="hero-content">
+        <h1>AndesRobot Team</h1>
+        <p>Empowering robotics, autonomy, and artificial intelligence from Chile and Colombia.</p>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('img/robot2.png');">
+      <div class="hero-content">
+        <h1>Robots for Education & Research</h1>
+        <p>We build smart systems to interact with real-world users.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="fotos">
+    <h2>Photo Gallery</h2>
+    <div class="slider-container">
+      <div class="slider-wrapper" id="slider">
+        <img src="img/robot1.png" alt="Robot 1">
+        <img src="img/robot2.png" alt="Robot 2">
+      </div>
+    </div>
+    <div class="ver-mas-wrapper">
+      <a href="fotos.html" class="btn-ver-mas">See more</a>
+    </div>
+  </section>
+
+  <section id="videos" data-aos="fade-right">
+    <h2>Videos</h2>
+    <div class="video-card">
+      <video controls width="100%">
+        <source src="videos/modelo_robot_robocup_v3.mp4" type="video/mp4">
+      </video>
+      <p class="video-description">3D model of the AndesRobot prototype showing mobility and design interaction.</p>
+      <a href="videos.html" class="btn-ver-mas">See more</a>
+    </div>
+  </section>
+
+
+  <section id="investigacion" data-aos="fade-up">
+    <h2>Research and Achievements</h2>
+    <p>
+      We develop advanced algorithms in localization, SLAM, computer vision, and autonomous planning.
+    </p>
+  </section>
+
+  <section class="repos-card" data-aos="fade-up">
+    <h2>Repositories</h2>
+    <p>Check out our open-source projects and research tools.</p>
+    <div class="repo-button-wrapper">
+      <a href="repos.html" class="btn-primary">View All Repositories</a>
+    </div>
+  </section>
+
+  <section id="miembros" data-aos="fade-up">
+    <h2>Team Members</h2>
+    <div class="grid-miembros">    
+      <div class="card">
+        <img src="img/members/miguel.png" alt="Miguel Solis" />
+        <h3>Miguel A. Solis Cid</h3>
+        <p>Professor & Researcher - UNAB Chile</p>
+      </div>
+      <div class="card">
+        <img src="img/members/mateus.jpg" alt="Armando Mateus" />
+        <h3>Armando Mateus Rojas</h3>
+        <p>Professor & Researcher - USTA Colombia</p>
+      </div>
+      <div class="card">
+        <img src="img/members/diegousta.jpg" alt="Diego Barragan" />
+        <h3>Diego A. Barragán Vargas</h3>
+        <p>Professor & Researcher - USTA Colombia</p>
+      </div>
+      <div class="card">
+        <img src="img/members/javi.jpg" alt="Javiera Vega" />
+        <h3>Javiera Vega Lagos</h3>
+        <p>Third-year student in Construction Engineering at Andres Bello University</p>
+      </div>
+      <div class="card">
+        <img src="img/members/ruby.jpg" alt="Dominique Pincheira" />
+        <h3>Dominique C. Pincheira Lecaros</h3>
+        <p>Third-year student in Automation and Robotics Engineering at Andres Bello University, active member of the NERT association</p>
+      </div>
+      <div class="card">
+        <img src="img/members/aleja.jpg" alt="Alejandra Pinzón" />
+        <h3>M. Alejandra Pinzón Farfán</h3>
+        <p>Master’s student in Electronic Engineering at Santo Tomas University (Colombia), member of the GED research group. Currently on an academic exchange at Andrés Bello University (Chile), part of the NERT association.</p>
+      </div>
+      <div class="card">
+        <img src="img/members/yiyi.jpg" alt="Ignacia Tapia" />
+        <h3>K. Ignacia Tapia Gomez</h3>
+        <p>Undergraduate student in Civil Engineering at Andres Bello University</p>
+      </div>
+      <div class="card">
+        <img src="img/members/diego.jpg" alt="Diego Lopez" />
+        <h3>Diego Lopez Vera</h3>
+        <p>Third-year student in Automation and Robotics Engineering at Andres Bello University, active member of the NERT association</p>
+      </div>
+      <div class="card">
+        <img src="img/members/juan.jpg" alt="Juan Rivera" />
+        <h3>Juan A. Rivera Gutierrez</h3>
+        <p>Undergraduate student in Electronic Engineering at Santo Tomas University (Colombia), member of the GED research group. Currently on an academic exchange at Andrés Bello University (Chile), part of the NERT association.</p>
+      </div>
+      <div class="card">
+        <img src="img/members/elias.jpg" alt="Elias Camblas" />
+        <h3>Elias A. Chamblas Zuñiga</h3>
+        <p>Third-year student in Automation and Robotics Engineering at Universidad Andrés Bello, active member of the NERT association</p>
+      </div>
+      <div class="card">
+        <img src="img/members/dani.jpg" alt="Daniela Romero" />
+        <h3>Daniela Y. Romero Padilla</h3>
+        <p>Third-year student in Automation and Robotics Engineering at Universidad Andrés Bello, active member of the NERT association</p>
+      </div>
+      <div class="card">
+        <img src="img/members/juli.jpg" alt="Julian Nivia" />
+        <h3>Julian Y. Nivia Mendez</h3>
+        <p>Undergraduate student in Electronic Engineering at Santo Tomas University (Colombia), member of the GED research group.</p>
+      </div>
+      <div class="card">
+        <img src="img/members/kathy.jpg" alt="Katherine Rojas" />
+        <h3>Katherine J. Rojas Romero</h3>
+        <p>Third-year student in  Industrial Engineering at Andres Bello University</p>
+      </div>
+      <div class="card">
+        <img src="img/members/topo.jpg" alt="Juan Avendaño" />
+        <h3>Juan D. Avendaño Garzón</h3>
+        <p>Undergraduate student in Electronic Engineering at Santo Tomas University (Colombia), member of the GED research group.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="robocup" data-aos="fade-up">
+    <h2>RoboCup Participation</h2>
+    <ul>
+      <li>Ninguna</li>
+    </ul>
+  </section>
+
+  <section id="instituciones" data-aos="fade-up">
+    <h2>Partner Universities</h2>
+    <div class="logos-instituciones">
+      <div class="institucion">
+        <img src="img/unab.png" alt="UNAB Chile" />
+        <p><strong>Universidad Andrés Bello (Chile)</strong><br />Antonio Varas Campus, Santiago</p>
+      </div>
+      <div class="institucion">
+        <img src="img/usta.png" alt="USTA Colombia" />
+        <p><strong>Universidad Santo Tomás (Colombia)</strong><br />Main Campus, Bogotá D.C.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 AndesRobot Team</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>
